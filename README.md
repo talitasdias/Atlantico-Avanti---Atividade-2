@@ -87,3 +87,78 @@ print(sorted_people)
 
 # Output: [('Dave', 20), ('João Silva', 19), ('Jéssica Vitória', 21), ('Talita Dias', 24)]
 ```
+
+## 6. Observe os espaços sublinhados e complete o código.
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(5.5, 3.5), layout="constrained")
+    for row in range(2):
+        for col in range(2):
+            axs[row, col].annotate(f'axs[{row}, {col}]', (0.5, 0.5),
+                transform=axs[row, col].transAxes,
+                ha='center', va='center', fontsize=18,
+                color='darkgrey')
+fig.suptitle('plt.subplots()')
+```
+
+## 7. Observe os espaços sublinhados e complete o código.
+
+```
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pylot as plt
+
+x = np.linspace(-2 * np.pi, 2 * np.pi, 100)
+y = np.sin(x)
+
+fig, ax = plt.subplots()
+ax.plot(x, y)
+```
+
+## 8. Utilizando pandas, como realizar a leitura de um arquivo CSV em um DataFrame e exibir as primeiras linhas?
+
+```
+import pandas as pd
+df = pd.read_csv('arquivo.csv')
+df.head()
+```
+
+## 9. Utilizando pandas, como selecionar uma coluna específica e filtrar linhas em um “DataFrame” com base em uma condição?
+
+```
+df[df['estado'] == 'Amazonas']
+```
+
+## 10.Utilizando pandas, como lidar com valores ausentes (NaN) em um DataFrame?
+
+Para lidar com valores ausentes (NaN) em um DataFrame utilizando pandas, podemos usar várias abordagens dependendo do que se deseja fazer com esses valores.
+
+Exemplo:
+```
+import pandas as pd
+
+# Read the CSV file into a DataFrame
+df = pd.read_csv('file_name.csv')
+
+# Check for missing values
+print("Missing values by column:")
+print(df.isna().sum())
+
+# Remove rows with missing values
+df_without_nan = df.dropna()
+
+# Fill missing values with the mean of the columns
+df_filled = df.fillna(df.mean())
+
+# Display the DataFrame without missing values
+print("DataFrame without missing values (rows removed):")
+print(df_without_nan)
+
+# Display the DataFrame with missing values filled
+print("DataFrame with missing values filled:")
+print(df_filled)
+
+```
